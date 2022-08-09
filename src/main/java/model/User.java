@@ -3,7 +3,7 @@ package model;
 public class User
 {
     private  int id;
-    private int userRoleId;
+    private int roleId;
     private String name;
     private String email;
     private  String dob;
@@ -13,7 +13,7 @@ public class User
 
     public  User(int id,int userRoleId,String name,String email,String dob,String address){
         this.id=id;
-        this.userRoleId=userRoleId;
+        this.roleId=userRoleId;
         this.name=name;
         this.email=email;
         this.dob=dob;
@@ -29,12 +29,12 @@ public class User
         this.id = id;
     }
 
-    public int getUserRoleId() {
-        return userRoleId;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setUserRoleId(int userRoleId) {
-        this.userRoleId = userRoleId;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public String getName() {
@@ -72,7 +72,7 @@ public class User
     @Override
     public  String toString(){
         String text="";
-        text+=id+","+userRoleId+","+name+","+email+","+dob+","+address;
+        text+=id+","+roleId+","+name+","+email+","+dob+","+address;
         return  text;
 
     }
