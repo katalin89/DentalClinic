@@ -5,15 +5,14 @@ public class Medicines {
    private String name;
    private String type;
    private String company;
-   private String cost;
+    private int cost;
 
-   public  Medicines(int id,String name,String type,String company,String cost){
+   public  Medicines(int id,String name,String type,String company,int cost){
        this.id=id;
        this.name=name;
        this.type=type;
        this.company=company;
        this.cost=cost;
-
    }
 
     public int getId() {
@@ -48,11 +47,11 @@ public class Medicines {
         this.company = company;
     }
 
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
     @Override
