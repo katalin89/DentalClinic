@@ -13,8 +13,10 @@ public class RepositoryProblems extends Repository{
 
     public  void insertProblems(Problems problems){
         String insertTo="";
-        insertTo+=" insert into problems ( role_id,title,module,description) values(";
-        insertTo+=String.format("%d, '%s', '%s', '%s'",problems.getRoleId(),problems.getTitle(),problems.getModule(),problems.getDescription());
+        insertTo+=" insert into problems (name,type,description) values(";
+
+
+            insertTo+=String.format(" '%s', '%s', '%s'",problems.getName(),problems.getType(),problems.getDescription());
         insertTo+=")";
         executeStatement(insertTo);
     }
@@ -46,7 +48,7 @@ public class RepositoryProblems extends Repository{
         List<Problems>problemss=new ArrayList<>();
         try{
             while(set.next()){
-                problemss.add(new Problems(set.getInt(1),set.getInt(2),set.getString(3),set.getString(4),set.getString(5)));
+                problemss.add(new Problems(set.getInt(1),set.getString(2),set.getString(3),set.getString(4)));
             }
         }catch (Exception e){
             System.out.println("Nu s-a creat lista");

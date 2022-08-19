@@ -7,14 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepositoryRole extends Repository{
-    public RepositoryMedicines(){
+    public RepositoryRole(){
         super();
     }
+
 
     public  void insertRole(Role role){
         String insertTo="";
         insertTo+=" insert into role ( role_id,title,module,description) values(";
-        insertTo+=String.format("%d, '%s', '%s', '%s'",role.getRoleId(),role.getTitle(),role.getModule(),role.getDescription());
+        insertTo+=String.format("%d, '%s', '%s'",role.getId(),role.getTitle(),role.getDescription());
         insertTo+=")";
         executeStatement(insertTo);
 
@@ -47,7 +48,9 @@ public class RepositoryRole extends Repository{
         List<Role>roles=new ArrayList<>();
         try{
             while(set.next()){
-                roles.add(new Role(set.getInt(1),set.getInt(2),set.getString(3),set.getString(4),set.getString(5)));
+
+
+                    roles.add(new Role(set.getInt(1),set.getString(2),set.getString(3)));
             }
         }catch (Exception e){
             System.out.println("Nu s-a creat lista");
