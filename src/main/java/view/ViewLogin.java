@@ -44,7 +44,7 @@ public class ViewLogin extends View {
             System.out.println("Nu este patient");
         }else {
             Patient patient = repositoryPacient.getPatientById(logat.getId());
-            ViewPatient viewPatient=new  ViewPatient(patient);
+
         }
     }
 

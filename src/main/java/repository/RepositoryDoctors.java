@@ -67,4 +67,37 @@ public class RepositoryDoctors extends Repository {
         }
         return doctorss;
     }
+
+
+    public ResultSet returnDoctorName(String name){
+        executeStatement(String.format("select * from doctors where name='%s',name"));
+        try{
+            return  statement.getResultSet();
+        }catch (Exception e){
+            System.out.println("Nu s-a executat schita");
+            return null;
+        }
+    }
+    //    public Doctors(int id,String name,String email,String dob,String address,String mobile,String password,String username){
+    public  Doctors returnDoctorNume(String nume){
+        ResultSet set=returnDoctorName(nume);
+
+        List<Doctors> doctors=new ArrayList<>();
+        try{
+            while(set.next()){
+                doctors.add(new Doctors(set.getInt(1),
+                        set.getString(2),
+                        set.getString(3),
+                        set.getString(4),
+                        set.getString(5),
+                        set.getString(6),
+                        set.getString(7),
+                        set.getString(8)));
+            }
+            return doctors.get(0);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
