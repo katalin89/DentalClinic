@@ -11,6 +11,8 @@ public class View {
     public  static  final RepositoryProblems repositoryProblems=new RepositoryProblems();
     public  static  final RepositoryRole repositoryRole= new RepositoryRole();
     public  static  final RepositoryUser repositoryUser=new RepositoryUser();
+    public  static final RepositoryProgramare repositoryProgramare=new RepositoryProgramare();
+
 }
 
 

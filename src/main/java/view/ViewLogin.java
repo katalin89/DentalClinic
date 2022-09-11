@@ -1,19 +1,19 @@
 package view;
 
-import model.Nurse;
 import model.Patient;
-import model.User;
 
 import java.util.Scanner;
 
 public class ViewLogin extends View {
+
     public  ViewLogin(){
-        //login();
     }
+
     public  void meniu(){
         System.out.println("Apasa tasta 1 pentru login");
         System.out.println("Apasa tasta 2 pentru logout");
     }
+
     public  void play(){
         Scanner scanner=new Scanner(System.in);
         boolean run=true;
@@ -26,9 +26,15 @@ public class ViewLogin extends View {
                     break;
 //                case 2:logout();
 //                break;
+                case 3:pacient();
+                    break;
 
             }
         }
+    }
+
+    private void pacient() {
+
     }
 
 
@@ -44,7 +50,8 @@ public class ViewLogin extends View {
             System.out.println("Nu este patient");
         }else {
             Patient patient = repositoryPacient.getPatientById(logat.getId());
-
+            ViewPatient viewPatient = new ViewPatient(patient);
+            viewPatient.play();
         }
     }
 

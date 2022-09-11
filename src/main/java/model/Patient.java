@@ -5,12 +5,14 @@ public class Patient  extends User{
     private String password;
     private String username;
 
-    public  Patient(int id,int userRoleId,String name,String email,String dob,String address,String mobile,String password,String username){
-        super(id,userRoleId,name,email,dob,address);
+    public  Patient(int id,String name,String email,String dob,String address,String mobile,String password,String username){
+        super(id,1,name,email,dob,address);
         this.mobile=mobile;
         this.password=password;
         this.username=username;
     }
+
+
 
     public String getMobile() {
         return mobile;

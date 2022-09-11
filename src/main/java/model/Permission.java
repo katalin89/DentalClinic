@@ -15,7 +15,6 @@ public class Permission {
         this.title=title;
         this.module=module;
         this.description=description;
-
     }
 
     public int getId() {

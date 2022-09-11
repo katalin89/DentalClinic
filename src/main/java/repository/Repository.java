@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public  abstract class Repository {
-    private String JdbURL = "jdbc:mysql://localhost:3306/library";
+    private String JdbURL = "jdbc:mysql://localhost:3306/dental_clinic";
     private String username = "root";
     private String password = "root";
     private Connection connection = null;
